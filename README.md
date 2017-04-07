@@ -4,7 +4,7 @@ The Docker-Compose file and container Dockerfiles for the NamelessMC project. Th
 # Usage
 You have to manually install Docker first if you don't have it installed on your server. Check out the official install guide here: https://docs.docker.com/engine/installation.
 
-After getting Docker ready, you will need to install `docker-compose` for quick deploying:
+After getting Docker ready, you will need to install `docker-compose`, if you don't have it, for quick deploying:
 ```
 $ curl -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
