@@ -17,6 +17,7 @@ RUN docker-php-source extract \
     && mv Nameless-$NAMELESSMC_VERSION/* /var/www/html/ \
     && bash -c "mv Nameless-$NAMELESSMC_VERSION/.[^.]* /var/www/html/" \
     && rm -rf nameless.tar.gz Nameless-$NAMELESSMC_VERSION \ 
+    && chown -R www-data:www-data /var/www/html \
     && apt-get clean \ 
     && apt-get autoclean \ 
     && apt-get autoremove --purge -y \ 
