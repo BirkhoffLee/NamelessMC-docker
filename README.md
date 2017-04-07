@@ -7,7 +7,10 @@ You have to manually install Docker first if you don't have it installed on your
 After getting Docker ready, you will need to install `docker-compose`, if you don't have it, for quick deploying:
 ```
 $ curl -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ chmod +x /usr/local/bin/docker-compose
 ```
+
+> Note: If you get a “Permission denied” error while running the commands above, please add `sudo` at the start of them and run again. This will require sudo access.
 
 When you're done, clone this repository and run! (`-d` means detach mode, e.g. run in background)
 ```
