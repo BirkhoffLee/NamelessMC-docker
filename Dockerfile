@@ -14,7 +14,8 @@ RUN docker-php-source extract \
     && docker-php-source delete \
     && curl -Lo nameless.tar.gz https://github.com/NamelessMC/Nameless/archive/v$NAMELESSMC_VERSION.tar.gz \
     && tar -xvf nameless.tar.gz \
-    && mv Nameless-$NAMELESSMC_VERSION/{*,.[^.]*} /var/www/html/ \
+    && mv Nameless-$NAMELESSMC_VERSION/* /var/www/html/ \
+    && bash -c "mv Nameless-$NAMELESSMC_VERSION/.[^.]* /var/www/html/" \
     && rm -rf nameless.tar.gz Nameless-$NAMELESSMC_VERSION \ 
     && apt-get clean \ 
     && apt-get autoclean \ 

@@ -4,6 +4,8 @@ The Docker-Compose file and container Dockerfiles for the NamelessMC project. Th
 # Deployment
 You have to manually install Docker first if you don't have it installed on your server. Check out the official install guide here: https://docs.docker.com/engine/installation.
 
+If you want to specify the version of NamelessMC you want to run, please head to https://github.com/BirkhoffLee/NamelessMC-docker#manually-run-commands.
+
 ## Using docker-compose (automated)
 For this method of deploying, you will need to install `docker-compose` for quick deploying, if you don't have it:
 ```
@@ -23,12 +25,32 @@ $ docker-compose up -d
 By default, the NamelessMC will then running on `0.0.0.0:80`! Open `http://<your-server-ip-address>` on your browser. Instead, if you're trying on your personal computer, open `http://localhost` then.
 
 ## Manually run commands
-If you more like to run the containers by yourself or using them with other containers like [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy), you may want to do it yourself. Check this out:
+If you more like to run the containers by yourself or using them with other containers like [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy), you may want to do it yourself.
+
+First, clone this repository:
 
 ```
 $ git clone https://github.com/BirkhoffLee/NamelessMC-docker
 $ cd NamelessMC-docker
+```
+
+Next, let's build the NamelessMC Apache server image.
+
+```
 $ docker build -t namelessmc .
+```
+
+If you want to specify the version:
+
+```
+$ docker build --build-arg NAMELESSMC_VERSION=1.0.15 -t namelessmc .
+```
+
+The version number **MUST BE** listed [here](https://github.com/NamelessMC/Nameless/releases) and it's **not guranteed** to work.
+
+Next, run the image we just built and a MySQL container as well.
+
+```
 $ docker run -d -e "MYSQL_ROOT_PASSWORD=nameless" -e "MYSQL_USER=nameless" -e "MYSQL_PASSWORD=nameless" -e "MYSQL_DATABASE=nameless" --name nameless_db mysql
 $ docker run -d -p 80:80 --link nameless_db --name nameless namelessmc
 ```
