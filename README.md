@@ -56,3 +56,22 @@ $ docker run -d -p 80:80 --link nameless_db --name nameless namelessmc
 ```
 
 That's it!
+
+# NamelessMC Installation
+After deploying the containers, open the corresponding url in your web browser to get started with NamelessMC.
+
+In my case, I'm not upgrading from 0.4.1 but doing a fresh install, I chose *"No, this is a new install >>"*.
+
+Then it will show up a page about the geeky requirements, they should have been prepared during the build process, so let's click *"Proceed >>"*.
+
+Next, the database configuration page will show up. For the database address, please fill `nameless_db` into it.
+
+For the rest information, please fill the following details into the corresponding fields on the page, if you used the default database configuration during deployment:
+
+> Database Username: `nameless`  
+  Database Password: `nameless`  
+  Database Name: `nameless`
+
+Click *"Submit"*, the page should tell *"The database was initialised successfully, and you may now progress with the installation."*. Otherwise, please check your database information you typed in.
+
+Press *"Continue >>", complete the rest of configuration, and you're ready.
