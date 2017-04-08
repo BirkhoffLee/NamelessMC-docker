@@ -18,9 +18,8 @@ RUN docker-php-source extract \
     && bash -c "mv Nameless-$NAMELESSMC_VERSION/.[^.]* /var/www/html/" \
     && rm -rf nameless.tar.gz Nameless-$NAMELESSMC_VERSION \ 
     && chown -R www-data:www-data /var/www/html \
+    && chmod 755 -R /var/www/html \
     && apt-get clean \ 
     && apt-get autoclean \ 
     && apt-get autoremove --purge -y \ 
     && rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
-
-RUN chmod 755 -R /var/www/html
