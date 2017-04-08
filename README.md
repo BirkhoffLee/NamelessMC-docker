@@ -74,4 +74,4 @@ For the rest information, please fill the following details into the correspondi
 
 Click *"Submit"*, the page should tell *"The database was initialised successfully, and you may now progress with the installation."*. Otherwise, please check your database information you typed in.
 
-Press *"Continue >>", complete the rest of configuration, and you're ready.
+Press *"Continue >>"*, complete the rest of configuration, and you're ready.
