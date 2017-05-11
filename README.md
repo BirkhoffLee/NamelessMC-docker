@@ -1,5 +1,5 @@
-# NamelessMC-docker
-The Docker-Compose file and container Dockerfiles for the NamelessMC project. This project is currently supporting [NamelessMC v1.0.15](https://github.com/NamelessMC/Nameless/tree/v1.0.15).
+# NamelessMC-docker [![](https://images.microbadger.com/badges/image/birkhofflee/namelessmc-docker.svg)](https://microbadger.com/images/birkhofflee/namelessmc-docker)
+The Docker-Compose file and container Dockerfiles for the NamelessMC project. This project is currently supporting [NamelessMC v1.0.16](https://github.com/NamelessMC/Nameless/tree/v1.0.16).
 
 # Deployment
 You have to manually install Docker first if you don't have it installed on your server. Check out the official install guide here: https://docs.docker.com/engine/installation.
@@ -43,7 +43,7 @@ $ docker build -t namelessmc .
 If you want to specify the version:
 
 ```
-$ docker build --build-arg NAMELESSMC_VERSION=1.0.15 -t namelessmc .
+$ docker build --build-arg NAMELESSMC_VERSION=1.0.16 -t namelessmc .
 ```
 
 The version number **MUST BE** listed [here](https://github.com/NamelessMC/Nameless/releases) and it's **not guranteed** to work.
